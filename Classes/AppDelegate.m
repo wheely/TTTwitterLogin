@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 
+#import "TTTwitterRootViewController.h"
+#import "TTTwitterLoginViewController.h"
+
+#import "Atlas.h"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -17,29 +21,32 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-  TTNavigator* navigator = [TTNavigator navigator];
-  navigator.persistenceMode = TTNavigatorPersistenceModeAll;
+    TTNavigator* navigator = [TTNavigator navigator];
+    navigator.persistenceMode = TTNavigatorPersistenceModeAll;
 
-  TTURLMap* map = navigator.URLMap;
+    TTURLMap* map = navigator.URLMap;
 
-  [map from:@"*" toViewController:[TTWebController class]];
-
-  if (![navigator restoreViewControllers]) {
-    [navigator openURLAction:[TTURLAction actionWithURLPath:@"http://three20.info"]];
-  }
+    [map from:@"*" toViewController:[TTWebController class]];
+    [map from:kAppRootURLPath toSharedViewController:[TTTwitterRootViewController class]];
+    [map from:kLoginURLPath toModalViewController:[TTTwitterLoginViewController class]];
+    
+    if (![navigator restoreViewControllers]) {
+        [navigator openURLAction:[TTURLAction actionWithURLPath:kAppRootURLPath]];
+        [navigator openURLAction:[TTURLAction actionWithURLPath:kLoginURLPath]];
+    }
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)navigator:(TTNavigator*)navigator shouldOpenURL:(NSURL*)URL {
-  return YES;
+    return YES;
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)application:(UIApplication*)application handleOpenURL:(NSURL*)URL {
-  [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:URL.absoluteString]];
-  return YES;
+    [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:URL.absoluteString]];
+    return YES;
 }
 
 

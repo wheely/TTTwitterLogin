@@ -13,6 +13,12 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		3AB220DF11AFE2E400F05C0E /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB220D611AFE2AF00F05C0E /* libThree20.a */; };
+		3AB2216811AFE61C00F05C0E /* TTTwitterLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2216711AFE61C00F05C0E /* TTTwitterLoginViewController.m */; };
+		3AB2216B11AFE6BD00F05C0E /* Atlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2216A11AFE6BD00F05C0E /* Atlas.m */; };
+		3AB2217711AFE7A300F05C0E /* TTTwitterLoginDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2217611AFE7A300F05C0E /* TTTwitterLoginDataSource.m */; };
+		3AB2217C11AFE7F400F05C0E /* TTTwitterLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2217B11AFE7F400F05C0E /* TTTwitterLogin.m */; };
+		3AB2218111AFE83200F05C0E /* TTTwitterLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB2218011AFE83200F05C0E /* TTTwitterLoginModel.m */; };
+		3AB221BE11AFEC4F00F05C0E /* TTTwitterRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB221BD11AFEC4F00F05C0E /* TTTwitterRootViewController.m */; };
 		EB383B6510BBF62B0000B2D2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB383B6410BBF62B0000B2D2 /* QuartzCore.framework */; };
 		EB383B6D10BBF6360000B2D2 /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EB383B6C10BBF6360000B2D2 /* Three20.bundle */; };
 /* End PBXBuildFile section */
@@ -22,14 +28,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 6EF9628B118E9552003902E7 /* Three20.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2 /* libThree20.a */;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
 			remoteInfo = Three20;
 		};
 		3AB220D711AFE2AF00F05C0E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6EF9628B118E9552003902E7 /* Three20.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C /* UnitTests.octest */;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
 			remoteInfo = UnitTests;
 		};
 /* End PBXContainerItemProxy section */
@@ -43,6 +49,18 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* TTTwitterLogin_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTwitterLogin_Prefix.pch; sourceTree = "<group>"; };
+		3AB2216611AFE61C00F05C0E /* TTTwitterLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTwitterLoginViewController.h; sourceTree = "<group>"; };
+		3AB2216711AFE61C00F05C0E /* TTTwitterLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTwitterLoginViewController.m; sourceTree = "<group>"; };
+		3AB2216911AFE6BD00F05C0E /* Atlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Atlas.h; sourceTree = "<group>"; };
+		3AB2216A11AFE6BD00F05C0E /* Atlas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Atlas.m; sourceTree = "<group>"; };
+		3AB2217511AFE7A300F05C0E /* TTTwitterLoginDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTwitterLoginDataSource.h; sourceTree = "<group>"; };
+		3AB2217611AFE7A300F05C0E /* TTTwitterLoginDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTwitterLoginDataSource.m; sourceTree = "<group>"; };
+		3AB2217A11AFE7F400F05C0E /* TTTwitterLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTwitterLogin.h; sourceTree = "<group>"; };
+		3AB2217B11AFE7F400F05C0E /* TTTwitterLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTwitterLogin.m; sourceTree = "<group>"; };
+		3AB2217F11AFE83200F05C0E /* TTTwitterLoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTwitterLoginModel.h; sourceTree = "<group>"; };
+		3AB2218011AFE83200F05C0E /* TTTwitterLoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTwitterLoginModel.m; sourceTree = "<group>"; };
+		3AB221BC11AFEC4F00F05C0E /* TTTwitterRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTwitterRootViewController.h; sourceTree = "<group>"; };
+		3AB221BD11AFEC4F00F05C0E /* TTTwitterRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTwitterRootViewController.m; sourceTree = "<group>"; };
 		6EF9628B118E9552003902E7 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = three20/src/Three20/Three20.xcodeproj; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* TTTwitterLogin-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TTTwitterLogin-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		EB383B6410BBF62B0000B2D2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -68,8 +86,13 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3AB2216511AFE60900F05C0E /* Login */,
 				1D3623240D0F684500981E51 /* AppDelegate.h */,
 				1D3623250D0F684500981E51 /* AppDelegate.m */,
+				3AB2216911AFE6BD00F05C0E /* Atlas.h */,
+				3AB2216A11AFE6BD00F05C0E /* Atlas.m */,
+				3AB221BC11AFEC4F00F05C0E /* TTTwitterRootViewController.h */,
+				3AB221BD11AFEC4F00F05C0E /* TTTwitterRootViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -131,6 +154,45 @@
 				3AB220D811AFE2AF00F05C0E /* UnitTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3AB2216511AFE60900F05C0E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3AB2217811AFE7CA00F05C0E /* Models */,
+				3AB2217411AFE78800F05C0E /* Data Source */,
+				3AB2216611AFE61C00F05C0E /* TTTwitterLoginViewController.h */,
+				3AB2216711AFE61C00F05C0E /* TTTwitterLoginViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		3AB2217411AFE78800F05C0E /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				3AB2217511AFE7A300F05C0E /* TTTwitterLoginDataSource.h */,
+				3AB2217611AFE7A300F05C0E /* TTTwitterLoginDataSource.m */,
+			);
+			name = "Data Source";
+			sourceTree = "<group>";
+		};
+		3AB2217811AFE7CA00F05C0E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3AB2217911AFE7D500F05C0E /* Objects */,
+				3AB2217F11AFE83200F05C0E /* TTTwitterLoginModel.h */,
+				3AB2218011AFE83200F05C0E /* TTTwitterLoginModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3AB2217911AFE7D500F05C0E /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				3AB2217A11AFE7F400F05C0E /* TTTwitterLogin.h */,
+				3AB2217B11AFE7F400F05C0E /* TTTwitterLogin.m */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 		6EF96274118E9502003902E7 /* Dependencies */ = {
@@ -219,6 +281,12 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
+				3AB2216811AFE61C00F05C0E /* TTTwitterLoginViewController.m in Sources */,
+				3AB2216B11AFE6BD00F05C0E /* Atlas.m in Sources */,
+				3AB2217711AFE7A300F05C0E /* TTTwitterLoginDataSource.m in Sources */,
+				3AB2217C11AFE7F400F05C0E /* TTTwitterLogin.m in Sources */,
+				3AB2218111AFE83200F05C0E /* TTTwitterLoginModel.m in Sources */,
+				3AB221BE11AFEC4F00F05C0E /* TTTwitterRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
