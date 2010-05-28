@@ -1,11 +1,16 @@
 TTTTwitterLogin
 v7
 r0
-t296739062.740926
+t296739633.685760
 cCheck dependencies
 cProcessInfoPlistFile /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/Info.plist TTTwitterLogin-Info.plist
 cCpResource build/Debug-iphonesimulator/TTTwitterLogin.app/Three20.bundle ../three20/src/Three20.bundle
-cProcessPCH /var/folders/wj/wjRDe4PeH+05rs+rUhkWC++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TTTwitterLogin_Prefix-bogmcnbjqovvnlhaqxkowzufcpal/TTTwitterLogin_Prefix.pch.gch TTTwitterLogin_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/wj/wjRDe4PeH+05rs+rUhkWC++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TTTwitterLogin_Prefix-bxhdpusemilfaiawjxphqelqrelo/TTTwitterLogin_Prefix.pch.gch TTTwitterLogin_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/Objects-normal/i386/main.o /Users/anton/TTTwitterLogin/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/Objects-normal/i386/AppDelegate.o /Users/anton/TTTwitterLogin/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/TTTwitterLogin normal i386
+cGenerateDSYMFile /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app.dSYM /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/TTTwitterLogin
+cTouch /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app
 
 N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk
 c000000004AF0C10000000000000000EE
@@ -59,20 +64,20 @@ s1522
 i"AppDelegate.h"
 
 N/Users/anton/TTTwitterLogin/TTTwitterLogin_Prefix.pch
-c000000004BFFA97000000000000000DF
-t1275046256
+c000000004BFFABAF00000000000000DF
+t1275046831
 s223
 i<Foundation/Foundation.h>
 i<UIKit/UIKit.h>
 i"Three20/Three20.h"
 
 N/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app
-t2
-s0
+t1275046833
+s204
 
 N/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app.dSYM
-t2
-s0
+t1275046833
+s102
 
 N/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/Info.plist
 t1275046261
@@ -83,8 +88,8 @@ t1275046261
 s8
 
 N/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/TTTwitterLogin
-t2
-s0
+t1275046833
+s1324936
 
 N/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/Three20.bundle
 t1275046261
@@ -96,8 +101,8 @@ t2
 s0
 
 N/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/Objects-normal/i386/AppDelegate.o
-t2
-s0
+t1275046833
+s42580
 
 N/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/Objects-normal/i386/TTTwitterLogin.LinkFileList
 c000000004BFFA9750000000000000101
@@ -105,17 +110,26 @@ t1275046261
 s257
 
 N/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/Objects-normal/i386/main.o
-t2
-s0
+t1275046833
+s6100
 
 N/Users/anton/TTTwitterLogin/main.m
 c000000004BFFA9700000000000000159
 t1275046256
 s345
 
+N/Users/anton/TTTwitterLogin/three20/Build/Products/Debug-iphonesimulator/libThree20.a
+c000000004BFFAB9C000000000055B668
+t1275046812
+s5617256
+
 N/var/folders/wj/wjRDe4PeH+05rs+rUhkWC++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TTTwitterLogin_Prefix-bogmcnbjqovvnlhaqxkowzufcpal/TTTwitterLogin_Prefix.pch.gch
 t2
 s0
+
+N/var/folders/wj/wjRDe4PeH+05rs+rUhkWC++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TTTwitterLogin_Prefix-bxhdpusemilfaiawjxphqelqrelo/TTTwitterLogin_Prefix.pch.gch
+t1275046833
+s15897072
 
 NTTTwitterLogin-Info.plist
 c000000004BFFA9700000000000000356
@@ -124,13 +138,33 @@ s854
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies296739061#296739061#0(0"1(22@60"Missing dependency target "Three20 (from Three20.xcodeproj)"296739061#18446744073709551615#0#0(1@0"0(0#1#0"9007637348679712#0"0#
+lSLF07#2@18"Check dependencies296739632#296739632#0(0"0(0#1#0"4300911832#0"0#
 
 CCompileC build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/Objects-normal/i386/AppDelegate.o /Users/anton/TTTwitterLogin/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-r0
+s296739633.210639
+e296739633.287186
+r1
+xCompileC
+xbuild/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/Objects-normal/i386/AppDelegate.o
+x/Users/anton/TTTwitterLogin/Classes/AppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@57"Compile /Users/anton/TTTwitterLogin/Classes/AppDelegate.m296739633#296739633#0(0"0(0#0#49"/Users/anton/TTTwitterLogin/Classes/AppDelegate.m4300911832#1941"    cd /Users/anton/TTTwitterLogin    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-generated-files.hmap -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-own-target-headers.hmap -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-all-target-headers.hmap -iquote /Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-project-headers.hmap -F/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator -I/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/include -Ithree20/Build/Products/three20 -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/DerivedSources/i386 -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/DerivedSources -include /var/folders/wj/wjRDe4PeH+05rs+rUhkWC++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TTTwitterLogin_Prefix-bxhdpusemilfaiawjxphqelqrelo/TTTwitterLogin_Prefix.pch -c /Users/anton/TTTwitterLogin/Classes/AppDelegate.m -o /Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/Objects-normal/i386/AppDelegate.o0#
 
 CCompileC build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/Objects-normal/i386/main.o /Users/anton/TTTwitterLogin/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-r0
+s296739633.209711
+e296739633.268246
+r1
+xCompileC
+xbuild/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/Objects-normal/i386/main.o
+x/Users/anton/TTTwitterLogin/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@42"Compile /Users/anton/TTTwitterLogin/main.m296739633#296739633#0(0"0(0#0#34"/Users/anton/TTTwitterLogin/main.m4300911832#1919"    cd /Users/anton/TTTwitterLogin    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-generated-files.hmap -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-own-target-headers.hmap -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-all-target-headers.hmap -iquote /Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-project-headers.hmap -F/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator -I/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/include -Ithree20/Build/Products/three20 -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/DerivedSources/i386 -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/DerivedSources -include /var/folders/wj/wjRDe4PeH+05rs+rUhkWC++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TTTwitterLogin_Prefix-bxhdpusemilfaiawjxphqelqrelo/TTTwitterLogin_Prefix.pch -c /Users/anton/TTTwitterLogin/main.m -o /Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/Objects-normal/i386/main.o0#
 
 CCpResource build/Debug-iphonesimulator/TTTwitterLogin.app/Three20.bundle ../three20/src/Three20.bundle
 s296739061.672742
@@ -142,10 +176,23 @@ x../three20/src/Three20.bundle
 lSLF07#2@34"Copy ../three20/src/Three20.bundle296739061#296739061#0(0"0(0#0#57"/Users/anton/TTTwitterLogin/../three20/src/Three20.bundle4300911832#447"    cd /Users/anton/TTTwitterLogin    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/anton/TTTwitterLogin/../three20/src/Three20.bundle /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app0#
 
 CGenerateDSYMFile /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app.dSYM /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/TTTwitterLogin
-r0
+s296739633.487262
+e296739633.683066
+r1
+xGenerateDSYMFile
+x/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app.dSYM
+x/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/TTTwitterLogin
+lSLF07#2@130"GenerateDSYMFile build/Debug-iphonesimulator/TTTwitterLogin.app.dSYM build/Debug-iphonesimulator/TTTwitterLogin.app/TTTwitterLogin296739633#296739633#0(0"0(0#0#89"/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/TTTwitterLogin4300911832#371"    cd /Users/anton/TTTwitterLogin    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/TTTwitterLogin -o /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app.dSYM0#
 
 CLd /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/TTTwitterLogin normal i386
-r0
+s296739633.287286
+e296739633.487151
+r1
+xLd
+x/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/TTTwitterLogin
+xnormal
+xi386
+lSLF07#2@94"Link /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/TTTwitterLogin296739633#296739633#0(0"0(0#0#0"4300911832#968"    cd /Users/anton/TTTwitterLogin    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -L/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator -F/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator -filelist /Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/Objects-normal/i386/TTTwitterLogin.LinkFileList -mmacosx-version-min=10.5 -all_load -ObjC -framework Foundation -framework UIKit -framework CoreGraphics -framework QuartzCore /Users/anton/TTTwitterLogin/three20/Build/Products/Debug-iphonesimulator/libThree20.a -o /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/TTTwitterLogin0#
 
 CProcessInfoPlistFile /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/Info.plist TTTwitterLogin-Info.plist
 s296739061.647128
@@ -157,8 +204,8 @@ xTTTwitterLogin-Info.plist
 lSLF07#2@33"Process TTTwitterLogin-Info.plist296739061#296739061#0(0"0(0#0#53"/Users/anton/TTTwitterLogin/TTTwitterLogin-Info.plist30399800003068008#467"    cd /Users/anton/TTTwitterLogin    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility TTTwitterLogin-Info.plist -genpkginfo /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app/Info.plist0#
 
 CProcessPCH /var/folders/wj/wjRDe4PeH+05rs+rUhkWC++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TTTwitterLogin_Prefix-bogmcnbjqovvnlhaqxkowzufcpal/TTTwitterLogin_Prefix.pch.gch TTTwitterLogin_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-s296739061.757025
-e296739062.740624
+s296739510.352537
+e296739511.028408
 r0
 xProcessPCH
 x/var/folders/wj/wjRDe4PeH+05rs+rUhkWC++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TTTwitterLogin_Prefix-bogmcnbjqovvnlhaqxkowzufcpal/TTTwitterLogin_Prefix.pch.gch
@@ -168,8 +215,26 @@ xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
 o/Users/anton/TTTwitterLogin/TTTwitterLogin_Prefix.pch:8:30: error: Three20/Three20.h: No such file or directory
-lSLF07#2@36"Precompile TTTwitterLogin_Prefix.pch296739061#296739062#0(112"/Users/anton/TTTwitterLogin/TTTwitterLogin_Prefix.pch:8:30: error: Three20/Three20.h: No such file or directory1(4@44"Three20/Three20.h: No such file or directory296739062#0#112#0(6@53"/Users/anton/TTTwitterLogin/TTTwitterLogin_Prefix.pch296739056#8#0#8#0#28"*: No such file or directory0(0#0#53"/Users/anton/TTTwitterLogin/TTTwitterLogin_Prefix.pch4300911832#1818"    cd /Users/anton/TTTwitterLogin    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-generated-files.hmap -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-own-target-headers.hmap -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-all-target-headers.hmap -iquote /Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-project-headers.hmap -F/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator -I/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/include -I../three20/Build/Products/three20 -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/DerivedSources/i386 -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/DerivedSources -c /Users/anton/TTTwitterLogin/TTTwitterLogin_Prefix.pch -o /var/folders/wj/wjRDe4PeH+05rs+rUhkWC++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TTTwitterLogin_Prefix-bogmcnbjqovvnlhaqxkowzufcpal/TTTwitterLogin_Prefix.pch.gch1#
+lSLF07#2@36"Precompile TTTwitterLogin_Prefix.pch296739510#296739511#0(112"/Users/anton/TTTwitterLogin/TTTwitterLogin_Prefix.pch:8:30: error: Three20/Three20.h: No such file or directory1(4@44"Three20/Three20.h: No such file or directory296739510#0#112#0(6@53"/Users/anton/TTTwitterLogin/TTTwitterLogin_Prefix.pch296739056#8#0#8#0#28"*: No such file or directory0(0#0#53"/Users/anton/TTTwitterLogin/TTTwitterLogin_Prefix.pch4300911832#1818"    cd /Users/anton/TTTwitterLogin    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-generated-files.hmap -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-own-target-headers.hmap -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-all-target-headers.hmap -iquote /Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-project-headers.hmap -F/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator -I/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/include -I../three20/Build/Products/three20 -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/DerivedSources/i386 -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/DerivedSources -c /Users/anton/TTTwitterLogin/TTTwitterLogin_Prefix.pch -o /var/folders/wj/wjRDe4PeH+05rs+rUhkWC++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TTTwitterLogin_Prefix-bogmcnbjqovvnlhaqxkowzufcpal/TTTwitterLogin_Prefix.pch.gch1#
+
+CProcessPCH /var/folders/wj/wjRDe4PeH+05rs+rUhkWC++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TTTwitterLogin_Prefix-bxhdpusemilfaiawjxphqelqrelo/TTTwitterLogin_Prefix.pch.gch TTTwitterLogin_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s296739632.397795
+e296739633.209605
+r1
+xProcessPCH
+x/var/folders/wj/wjRDe4PeH+05rs+rUhkWC++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TTTwitterLogin_Prefix-bxhdpusemilfaiawjxphqelqrelo/TTTwitterLogin_Prefix.pch.gch
+xTTTwitterLogin_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@36"Precompile TTTwitterLogin_Prefix.pch296739632#296739633#0(0"0(0#0#53"/Users/anton/TTTwitterLogin/TTTwitterLogin_Prefix.pch4300911832#1815"    cd /Users/anton/TTTwitterLogin    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -DDEBUG -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-generated-files.hmap -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-own-target-headers.hmap -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-all-target-headers.hmap -iquote /Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/TTTwitterLogin-project-headers.hmap -F/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator -I/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/include -Ithree20/Build/Products/three20 -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/DerivedSources/i386 -I/Users/anton/TTTwitterLogin/build/TTTwitterLogin.build/Debug-iphonesimulator/TTTwitterLogin.build/DerivedSources -c /Users/anton/TTTwitterLogin/TTTwitterLogin_Prefix.pch -o /var/folders/wj/wjRDe4PeH+05rs+rUhkWC++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TTTwitterLogin_Prefix-bxhdpusemilfaiawjxphqelqrelo/TTTwitterLogin_Prefix.pch.gch0#
 
 CTouch /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app
-r0
+s296739633.683154
+e296739633.685526
+r1
+xTouch
+x/Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app
+lSLF07#2@80"Touch /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app296739633#296739633#0(0"0(0#0#0"4300911832#263"    cd /Users/anton/TTTwitterLogin    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/anton/TTTwitterLogin/build/Debug-iphonesimulator/TTTwitterLogin.app0#
 
