@@ -4,3 +4,6 @@ TTTwitterLogin
 TTTwitterLogin is Three20 sample that shows how to use TTModel ecosystem to build a Facebook-like Login controller.
 
 [![](https://wheely.box.net/shared/static/jumjybky9n.png)](https://wheely.box.net/shared/static/jumjybky9n.png)
+[![](https://wheely.box.net/shared/static/tau3a05u6k.png)](https://wheely.box.net/shared/static/tau3a05u6k.png)
+[![](https://wheely.box.net/shared/static/180qntef79.png)](https://wheely.box.net/shared/static/180qntef79.png)
+
