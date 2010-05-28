@@ -1,0 +1,9 @@
+//
+// Prefix header for all source files of the 'TTTwitterLogin' target in the 'TTTwitterLogin' project
+//
+
+#ifdef __OBJC__
+  #import <Foundation/Foundation.h>
+  #import <UIKit/UIKit.h>
+  #import "Three20/Three20.h"
+#endif
