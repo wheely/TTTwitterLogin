@@ -1,9 +1,17 @@
 //
-//  TTLoginViewController.m
-//  TTTwitterLogin
+// Copyright 2010 Wheely
 //
-//  Created by Anton Chirkunov on 28/5/2010.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 //
 
 #import "TTTwitterLoginViewController.h"
@@ -81,23 +89,6 @@
                                                object: self.dataSource.model];
 }
 
-- (void)didStartLogin:(NSNotification*)notification {
-    [self showLoading:YES];
-}
-
-
-- (void)didLogin:(NSNotification*)notification {
-    [self showLoading:NO];
-    [[[TTNavigator navigator] rootViewController] dismissModalViewControllerAnimated:NO];
-}
-
-
-- (void)didFailLogin:(NSNotification*)notification {
-    [self showLoading:NO];
-    TTAlertViewController* alert = [[[TTAlertViewController alloc] initWithTitle:@"TTTwitterLogin" message:@"Wrong username or password"] autorelease];
-    [alert addCancelButtonWithTitle:@"OK" URL:nil];
-    [alert showInView:self.view animated:YES];
-}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)showLoading:(BOOL)show {
@@ -107,6 +98,34 @@
     else {
         self.loadingView = nil;
     }
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark NSNotifications
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)didStartLogin:(NSNotification*)notification {
+    [self showLoading:YES];
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)didLogin:(NSNotification*)notification {
+    [self showLoading:NO];
+    [[[TTNavigator navigator] rootViewController] dismissModalViewControllerAnimated:NO];
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)didFailLogin:(NSNotification*)notification {
+    [self showLoading:NO];
+    TTAlertViewController* alert = [[[TTAlertViewController alloc] initWithTitle:@"TTTwitterLogin" message:@"Wrong username or password"] autorelease];
+    [alert addCancelButtonWithTitle:@"OK" URL:nil];
+    [alert showInView:self.view animated:YES];
 }
 
 
