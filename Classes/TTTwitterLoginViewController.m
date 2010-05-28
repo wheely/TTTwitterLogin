@@ -36,7 +36,6 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
     TT_RELEASE_SAFELY(_emptyTable);
     [super dealloc];
 }
@@ -75,18 +74,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)createModel {
     self.dataSource = [[[TTTwitterLoginDataSource alloc] init] autorelease];
-    [[NSNotificationCenter defaultCenter] addObserver: self
-                                             selector: @selector(didStartLogin:)
-                                                 name: @"didStartLogin"
-                                               object: self.dataSource.model];
-    [[NSNotificationCenter defaultCenter] addObserver: self
-                                             selector: @selector(didLogin:)
-                                                 name: @"didLogin"
-                                               object: self.dataSource.model];
-    [[NSNotificationCenter defaultCenter] addObserver: self
-                                             selector: @selector(didFailLogin:)
-                                                 name: @"didFailLogin"
-                                               object: self.dataSource.model];
 }
 
 
@@ -107,25 +94,16 @@
 #pragma mark NSNotifications
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)didStartLogin:(NSNotification*)notification {
-    [self showLoading:YES];
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)didLogin:(NSNotification*)notification {
-    [self showLoading:NO];
+- (void)model:(id<TTModel>)model didUpdateObject:(id)object atIndexPath:(NSIndexPath *)indexPath {
     [[[TTNavigator navigator] rootViewController] dismissModalViewControllerAnimated:NO];
+    [super model:model didUpdateObject:object atIndexPath:indexPath];
 }
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)didFailLogin:(NSNotification*)notification {
-    [self showLoading:NO];
+- (void)model:(id<TTModel>)model didFailLoadWithError:(NSError *)error {
     TTAlertViewController* alert = [[[TTAlertViewController alloc] initWithTitle:@"TTTwitterLogin" message:@"Wrong username or password"] autorelease];
     [alert addCancelButtonWithTitle:@"OK" URL:nil];
     [alert showInView:self.view animated:YES];
+    [super model:model didFailLoadWithError:error];
 }
 
 

@@ -33,7 +33,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)logout {
-    [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:kLoginURLPath]];
+    [[TTNavigator navigator] openURLAction:[[TTURLAction actionWithURLPath:kLoginURLPath] applyAnimated:YES]];
 }
 
 @end

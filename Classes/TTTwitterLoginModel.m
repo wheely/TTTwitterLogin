@@ -40,6 +40,20 @@ static NSString* kTwitterLoginURL = @"http://%@:%@@twitter.com/statuses/user_tim
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)login:(NSString *)username password:(NSString *)password {
+    
+    NSURLCredentialStorage *credentialsStorage = [NSURLCredentialStorage sharedCredentialStorage];
+    NSDictionary *allCredentials = [credentialsStorage allCredentials];
+    
+    //iterate through all credentials to find the twitter host
+    for (NSURLProtectionSpace *protectionSpace in allCredentials)
+        if ([[protectionSpace host] isEqualToString:@"twitter.com"]){
+            //to get the twitter's credentials
+            NSDictionary *credentials = [credentialsStorage credentialsForProtectionSpace:protectionSpace];
+            //iterate through twitter's credentials, and erase them all
+            for (NSString *credentialKey in credentials)
+                [credentialsStorage removeCredential:[credentials objectForKey:credentialKey] forProtectionSpace:protectionSpace];
+    }
+    
     NSString* url = [NSString stringWithFormat:kTwitterLoginURL, username, password];
     TTURLRequest *request = [TTURLRequest requestWithURL:url delegate:self];
     
@@ -47,6 +61,7 @@ static NSString* kTwitterLoginURL = @"http://%@:%@@twitter.com/statuses/user_tim
     request.httpMethod = @"GET";
     request.cachePolicy = TTURLRequestCachePolicyNone;
     request.shouldHandleCookies = NO;
+    
     
     id<TTURLResponse> response = [[TTURLDataResponse alloc] init];
     request.response = response;
@@ -59,7 +74,6 @@ static NSString* kTwitterLoginURL = @"http://%@:%@@twitter.com/statuses/user_tim
     TT_RELEASE_SAFELY(userInfo);
     
     [request send];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"didStartLogin" object:self userInfo:nil];
 }
 
 
@@ -75,8 +89,8 @@ static NSString* kTwitterLoginURL = @"http://%@:%@@twitter.com/statuses/user_tim
     [[NSUserDefaults standardUserDefaults] setObject:userInfo.username forKey:@"username"];
     [[NSUserDefaults standardUserDefaults] setObject:userInfo.username forKey:@"password"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-        
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"didLogin" object:self userInfo:nil];
+      
+    [super didUpdateObject:userInfo atIndexPath:nil];
 }
 
 
@@ -85,14 +99,9 @@ static NSString* kTwitterLoginURL = @"http://%@:%@@twitter.com/statuses/user_tim
 didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge*)challenge {
     // Cancel the request
     [request cancel];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"didFailLogin" object:self userInfo:nil];
+    [super didFailLoadWithError:nil];
 }
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)request:(TTURLRequest *)request didFailLoadWithError:(NSError *)error {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"didFailLogin" object:self userInfo:nil];
-}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -109,34 +118,9 @@ didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge*)challenge {
     [self didFinishLoad];
 }
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (BOOL)isLoadingMore {
-    return NO;
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (BOOL)isOutdated {
-    return NO;
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)isLoaded {
     return !!_credentials;
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (BOOL)isLoading {
-    return NO;
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (BOOL)isEmpty {
-    return NO;
 }
 
 
