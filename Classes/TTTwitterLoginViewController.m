@@ -100,7 +100,8 @@
 }
 
 - (void)model:(id<TTModel>)model didFailLoadWithError:(NSError *)error {
-    TTAlertViewController* alert = [[[TTAlertViewController alloc] initWithTitle:@"TTTwitterLogin" message:@"Wrong username or password"] autorelease];
+    //id userInfo = [error userInfo];
+    TTAlertViewController* alert = [[[TTAlertViewController alloc] initWithTitle:@"TTTwitterLogin" message:TTDescriptionForError(error)] autorelease];
     [alert addCancelButtonWithTitle:@"OK" URL:nil];
     [alert showInView:self.view animated:YES];
     [super model:model didFailLoadWithError:error];

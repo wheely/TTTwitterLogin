@@ -19,7 +19,7 @@
 
 #import "TTTwitterLogin.h"
 
-static NSString* kTwitterLoginURL = @"http://%@:%@@twitter.com/statuses/user_timeline.xml";
+static NSString* kTwitterLoginURL = @"http://twitter.com/statuses/user_timeline.xml";
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -86,9 +86,9 @@ static NSString* kTwitterLoginURL = @"http://%@:%@@twitter.com/statuses/user_tim
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)requestDidFinishLoad:(TTURLRequest*)request {
     TTTwitterLogin* userInfo = request.userInfo;
-    [[NSUserDefaults standardUserDefaults] setObject:userInfo.username forKey:@"username"];
-    [[NSUserDefaults standardUserDefaults] setObject:userInfo.username forKey:@"password"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    //[[NSUserDefaults standardUserDefaults] setObject:userInfo.username forKey:@"username"];
+    //[[NSUserDefaults standardUserDefaults] setObject:userInfo.username forKey:@"password"];
+    //[[NSUserDefaults standardUserDefaults] synchronize];
       
     [super didUpdateObject:userInfo atIndexPath:nil];
 }
@@ -97,9 +97,14 @@ static NSString* kTwitterLoginURL = @"http://%@:%@@twitter.com/statuses/user_tim
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)request:(TTURLRequest*)request
 didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge*)challenge {
-    // Cancel the request
-    [request cancel];
-    [super didFailLoadWithError:nil];
+    if ([challenge previousFailureCount] == 0) {
+        TTTwitterLogin* userInfo = request.userInfo;
+        NSURLCredential* newCredential = [NSURLCredential credentialWithUser:userInfo.username password:userInfo.password persistence:NSURLCredentialPersistencePermanent];
+        [[challenge sender] useCredential:newCredential forAuthenticationChallenge:challenge];
+        
+    } else {
+        [[challenge sender] cancelAuthenticationChallenge:challenge];
+    }
 }
 
 
@@ -112,9 +117,14 @@ didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge*)challenge {
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)load:(TTURLRequestCachePolicy)cachePolicy more:(BOOL)more {
     TT_RELEASE_SAFELY(_credentials);
+    NSURLProtectionSpace* space = [[NSURLProtectionSpace alloc] initWithHost:@"twitter.com" port:80 protocol:@"http" realm:@"Twitter API" authenticationMethod:NSURLAuthenticationMethodHTTPBasic];
+    NSURLCredential* cred = [[NSURLCredentialStorage sharedCredentialStorage] defaultCredentialForProtectionSpace:space];
+    
     _credentials = [[TTTwitterLogin alloc] init];
-    _credentials.username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-    _credentials.password = [[NSUserDefaults standardUserDefaults] stringForKey:@"password"];
+    _credentials.username = [cred user];
+    _credentials.password = [cred password];
+    
+    TT_RELEASE_SAFELY(space);
     [self didFinishLoad];
 }
 
