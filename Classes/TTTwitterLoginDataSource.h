@@ -23,4 +23,6 @@
     UITextField* _passwordField;
 }
 
+@property (nonatomic, readonly) UITextField* usernameField;
+
 @end

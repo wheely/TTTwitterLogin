@@ -19,6 +19,7 @@
 
 #import "TTTwitterLogin.h"
 
+static NSString* kHost = @"twitter.com";
 static NSString* kTwitterLoginURL = @"http://twitter.com/statuses/user_timeline.xml";
 
 
@@ -46,7 +47,7 @@ static NSString* kTwitterLoginURL = @"http://twitter.com/statuses/user_timeline.
     
     //iterate through all credentials to find the twitter host
     for (NSURLProtectionSpace *protectionSpace in allCredentials)
-        if ([[protectionSpace host] isEqualToString:@"twitter.com"]){
+        if ([[protectionSpace host] isEqualToString:kHost]){
             //to get the twitter's credentials
             NSDictionary *credentials = [credentialsStorage credentialsForProtectionSpace:protectionSpace];
             //iterate through twitter's credentials, and erase them all
@@ -85,12 +86,7 @@ static NSString* kTwitterLoginURL = @"http://twitter.com/statuses/user_timeline.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)requestDidFinishLoad:(TTURLRequest*)request {
-    TTTwitterLogin* userInfo = request.userInfo;
-    //[[NSUserDefaults standardUserDefaults] setObject:userInfo.username forKey:@"username"];
-    //[[NSUserDefaults standardUserDefaults] setObject:userInfo.username forKey:@"password"];
-    //[[NSUserDefaults standardUserDefaults] synchronize];
-      
-    [super didUpdateObject:userInfo atIndexPath:nil];
+    [super didUpdateObject:request.userInfo atIndexPath:nil];
 }
 
 
@@ -117,7 +113,7 @@ didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge*)challenge {
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)load:(TTURLRequestCachePolicy)cachePolicy more:(BOOL)more {
     TT_RELEASE_SAFELY(_credentials);
-    NSURLProtectionSpace* space = [[NSURLProtectionSpace alloc] initWithHost:@"twitter.com" port:80 protocol:@"http" realm:@"Twitter API" authenticationMethod:NSURLAuthenticationMethodHTTPBasic];
+    NSURLProtectionSpace* space = [[NSURLProtectionSpace alloc] initWithHost:kHost port:80 protocol:@"http" realm:@"Twitter API" authenticationMethod:NSURLAuthenticationMethodHTTPBasic];
     NSURLCredential* cred = [[NSURLCredentialStorage sharedCredentialStorage] defaultCredentialForProtectionSpace:space];
     
     _credentials = [[TTTwitterLogin alloc] init];
