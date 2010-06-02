@@ -53,7 +53,7 @@ static NSString* kTwitterLoginURL = @"http://twitter.com/statuses/user_timeline.
             //iterate through twitter's credentials, and erase them all
             for (NSString *credentialKey in credentials)
                 [credentialsStorage removeCredential:[credentials objectForKey:credentialKey] forProtectionSpace:protectionSpace];
-    }
+        }
     
     NSString* url = [NSString stringWithFormat:kTwitterLoginURL, username, password];
     TTURLRequest *request = [TTURLRequest requestWithURL:url delegate:self];
@@ -109,24 +109,9 @@ didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge*)challenge {
 #pragma mark -
 #pragma mark TTModel
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)load:(TTURLRequestCachePolicy)cachePolicy more:(BOOL)more {
-    TT_RELEASE_SAFELY(_credentials);
-    NSURLProtectionSpace* space = [[NSURLProtectionSpace alloc] initWithHost:kHost port:80 protocol:@"http" realm:@"Twitter API" authenticationMethod:NSURLAuthenticationMethodHTTPBasic];
-    NSURLCredential* cred = [[NSURLCredentialStorage sharedCredentialStorage] defaultCredentialForProtectionSpace:space];
-    
-    _credentials = [[TTTwitterLogin alloc] init];
-    _credentials.username = [cred user];
-    _credentials.password = [cred password];
-    
-    TT_RELEASE_SAFELY(space);
-    [self didFinishLoad];
-}
-
 /////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)isLoaded {
-    return !!_credentials;
+    return YES;
 }
 
 

@@ -36,6 +36,43 @@
 - (id)init {
     if (self = [super init]) {
         _loginModel = [[TTTwitterLoginModel alloc] init];
+        NSMutableArray *items = [[NSMutableArray alloc] init];
+        NSMutableArray *sections = [[NSMutableArray alloc] init];
+        
+        [sections addObject:@""];
+        NSMutableArray *itemsRow = [[NSMutableArray alloc] init];
+        
+        _usernameField = [[UITextField alloc] init];
+        _usernameField.placeholder = @"Username";
+        _usernameField.keyboardType = UIKeyboardTypeDefault;
+        _usernameField.returnKeyType = UIReturnKeyNext;
+        _usernameField.autocorrectionType = UITextAutocorrectionTypeNo;
+        _usernameField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        _usernameField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        _usernameField.clearsOnBeginEditing = NO;
+        _usernameField.delegate = self;
+        _usernameField.text = @"";
+        [itemsRow addObject:_usernameField];
+        
+        _passwordField = [[UITextField alloc] init];
+        _passwordField.placeholder = @"Password";
+        _passwordField.returnKeyType = UIReturnKeyGo;
+        _passwordField.secureTextEntry = YES;
+        _passwordField.autocorrectionType = UITextAutocorrectionTypeNo;
+        _passwordField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        _passwordField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        _passwordField.clearsOnBeginEditing = NO;
+        _passwordField.delegate = self;
+        _passwordField.text = @""; // Initialize the passwordfield nsstring
+        [itemsRow addObject:_passwordField];
+        
+        [items addObject:itemsRow];
+        TT_RELEASE_SAFELY(itemsRow);
+        
+        _items = items;
+        _sections = sections;
+        
+        [_usernameField becomeFirstResponder];
     }
     return self;
 }
@@ -47,57 +84,6 @@
     TT_RELEASE_SAFELY(_usernameField);
     TT_RELEASE_SAFELY(_passwordField);
     [super dealloc];
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark TTTableViewDataSource
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)tableViewDidLoadModel:(UITableView *)tableView {    
-    
-    NSMutableArray *items = [[NSMutableArray alloc] init];
-    NSMutableArray *sections = [[NSMutableArray alloc] init];
-    
-    [sections addObject:@""];
-    NSMutableArray *itemsRow = [[NSMutableArray alloc] init];
-    
-    _usernameField = [[UITextField alloc] init];
-    _usernameField.placeholder = @"Username";
-    _usernameField.keyboardType = UIKeyboardTypeDefault;
-    _usernameField.returnKeyType = UIReturnKeyNext;
-    _usernameField.autocorrectionType = UITextAutocorrectionTypeNo;
-    _usernameField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    _usernameField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    _usernameField.clearsOnBeginEditing = NO;
-    _usernameField.delegate = self;
-    _usernameField.text = _loginModel.credentials.username;
-    [itemsRow addObject:_usernameField];
-    
-    _passwordField = [[UITextField alloc] init];
-    _passwordField.placeholder = @"Password";
-    _passwordField.returnKeyType = UIReturnKeyGo;
-    _passwordField.secureTextEntry = YES;
-    _passwordField.autocorrectionType = UITextAutocorrectionTypeNo;
-    _passwordField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    _passwordField.clearButtonMode = UITextFieldViewModeWhileEditing;
-    _passwordField.clearsOnBeginEditing = NO;
-    _passwordField.delegate = self;
-    _passwordField.text = @""; // Initialize the passwordfield nsstring
-    [itemsRow addObject:_passwordField];
-    
-    [items addObject:itemsRow];
-    TT_RELEASE_SAFELY(itemsRow);
-    
-    self.items = items;
-    self.sections = sections;
-    TT_RELEASE_SAFELY(items);
-    TT_RELEASE_SAFELY(sections);
-    
-    [_usernameField becomeFirstResponder];
 }
 
 
